@@ -18,7 +18,7 @@ class AboutStrings < Neo::Koan
 
   def test_use_double_quotes_to_create_strings_with_single_quotes
     string = "Don't"
-    assert_equal 'Don\'t, string'
+    assert_equal __("Don't"), string
   end
 
   def test_use_backslash_for_those_hard_cases
@@ -58,8 +58,8 @@ EOS
 
   def test_plus_will_concatenate_two_strings
     string = "Hello, " + "World"
-    assert_equal 'Hello,World', string
-  end
+    assert_equal __("Hello, World"), string
+      end
 
   def test_plus_concatenation_will_leave_the_original_strings_unmodified
     hi = "Hello, "
@@ -73,7 +73,7 @@ EOS
     hi = "Hello, "
     there = "World"
     hi += there
-    assert_equal 'Hello,World', hi
+    assert_equal "Hello, World", hi
   end
 
   def test_plus_equals_also_will_leave_the_original_string_unmodified
